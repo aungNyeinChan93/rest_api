@@ -1,0 +1,549 @@
+{
+	"info": {
+		"_postman_id": "d6d8f86f-4155-4708-a2d9-5ea464365b18",
+		"name": "Rest_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37986999"
+	},
+	"item": [
+		{
+			"name": "show users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "users_eg",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Sep 2024 17:33:18 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Show users\",\n    \"users\": [\n        {\n            \"id\": 1,\n            \"role_id\": 1,\n            \"address\": \"yangon\",\n            \"phone\": \"123123123\",\n            \"name\": \"chan\",\n            \"email\": \"adsfasdf@gmail.com\",\n            \"email_verified_at\": null,\n            \"profile\": null,\n            \"created_at\": \"2024-09-20T12:01:11.000000Z\",\n            \"updated_at\": \"2024-09-20T12:01:11.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"role_id\": 1,\n            \"address\": \"yangon\",\n            \"phone\": \"123123123\",\n            \"name\": \"chan\",\n            \"email\": \"chan@gmail.com\",\n            \"email_verified_at\": null,\n            \"profile\": null,\n            \"created_at\": \"2024-09-20T12:02:53.000000Z\",\n            \"updated_at\": \"2024-09-20T12:02:53.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"role_id\": 1,\n            \"address\": \"yangon\",\n            \"phone\": \"123123123\",\n            \"name\": \"12312\",\n            \"email\": \"ch123an@gmail.com\",\n            \"email_verified_at\": null,\n            \"profile\": null,\n            \"created_at\": \"2024-09-20T12:03:27.000000Z\",\n            \"updated_at\": \"2024-09-20T12:03:27.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"role_id\": 1,\n            \"address\": \"yangon\",\n            \"phone\": \"123123123\",\n            \"name\": \"12312\",\n            \"email\": \"mgmg@gmail.com\",\n            \"email_verified_at\": null,\n            \"profile\": null,\n            \"created_at\": \"2024-09-20T17:30:02.000000Z\",\n            \"updated_at\": \"2024-09-20T17:30:02.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"role_id\": 1,\n            \"address\": \"yangon\",\n            \"phone\": \"123123123\",\n            \"name\": \"12312\",\n            \"email\": \"hlahla@gmail.com\",\n            \"email_verified_at\": null,\n            \"profile\": null,\n            \"created_at\": \"2024-09-20T17:32:46.000000Z\",\n            \"updated_at\": \"2024-09-20T17:32:46.000000Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"12312\",\r\n    \"email\":\"uba@gmail.com\",\r\n    \"password\":\"password\",\r\n    \"phone\":\"123123123\",\r\n    \"address\":\"yangon\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "register_eg",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"12312\",\r\n    \"email\":\"mgmg@gmail.com\",\r\n    \"password\":\"password\",\r\n    \"phone\":\"123123123\",\r\n    \"address\":\"yangon\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Sep 2024 17:30:02 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User Create Success\",\n    \"token\": \"4|vX3SlWYj2rGNRDswOJr9PdAbEKA5PzfDBZ3d9lmsff363bd2\"\n}"
+				}
+			]
+		},
+		{
+			"name": "token_test",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4|vX3SlWYj2rGNRDswOJr9PdAbEKA5PzfDBZ3d9lmsff363bd2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/api/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "token_test",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Sep 2024 17:31:19 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"role_id\": 1,\n    \"address\": \"yangon\",\n    \"phone\": \"123123123\",\n    \"name\": \"12312\",\n    \"email\": \"mgmg@gmail.com\",\n    \"email_verified_at\": null,\n    \"profile\": null,\n    \"created_at\": \"2024-09-20T17:30:02.000000Z\",\n    \"updated_at\": \"2024-09-20T17:30:02.000000Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"chan@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"chan@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Sep 2024 18:23:37 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Login is success!\",\n    \"login-token\": \"12|7KOLX5dLlbgygcXWUV3KJzXefHR1MlSu4FGbsfTq40d264e2\"\n}"
+				}
+			]
+		},
+		{
+			"name": "update_profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "13|svUuKCN5JfTQzI9cqUNbECj5TZzd2VrqVHIXhMHu532bd299",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "profile",
+							"type": "file",
+							"src": "/C:/Users/Pc/Pictures/error-ss/pp3.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/users/8/update-profile",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"8",
+						"update-profile"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update_profile",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "profile",
+									"type": "file",
+									"src": "/C:/Users/Pc/Pictures/error-ss/pp3.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/users/8/update-profile",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"8",
+								"update-profile"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Sep 2024 20:01:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"success update!\"\n}"
+				}
+			]
+		}
+	]
+}
