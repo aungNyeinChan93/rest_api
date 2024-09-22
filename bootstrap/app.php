@@ -26,4 +26,10 @@ return Application::configure(basePath: dirname(__DIR__))
                 ],404);
             }
         });
+
+        $exceptions->render(function(Exception $error){
+           return response()->json([
+            "errors" =>$error->getMessage()
+           ],422);
+        });
     })->create();

@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Api;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use PhpParser\Node\Stmt\TryCatch;
 
 class UserController extends Controller
 {
@@ -24,6 +26,7 @@ class UserController extends Controller
     // register user
     public function register()
     {
+       try {
         $validator = Validator::make(request()->all(), [
             "name" => "required",
             "email" => "required|email|unique:users,email",
@@ -60,6 +63,11 @@ class UserController extends Controller
                 "token" => $token,
             ]);
         }
+       } catch (Exception $e) {
+            return response()->json([
+                "errors"=>$e->getMessage()
+            ],422);
+       }
     }
 
     // login
