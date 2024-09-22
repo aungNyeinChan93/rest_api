@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Middleware\adminMiddleware;
+use App\Http\Middleware\superadminMiddleware;
 use Illuminate\Http\Request;
 
 use Illuminate\Foundation\Application;
@@ -16,6 +18,8 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         //
+        $middleware->alias(['admin' => adminMiddleware::class]);
+        $middleware->alias(['superadmin' => superadminMiddleware::class]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         // 404
