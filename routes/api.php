@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\CategoryController;
@@ -29,4 +30,14 @@ Route::get("categories",[CategoryController::class, "show"]);
 Route::post("categories",[CategoryController::class,"store"])->middleware(["auth:sanctum","admin"]);
 Route::put("categories/{category}",[CategoryController::class, "update"])->middleware(["auth:sanctum","admin"]);
 Route::delete("categories/{category}",[CategoryController::class, "delete"])->middleware(["auth:sanctum","admin"]);
+
+// products
+Route::get("products",[ProductController::class,"show"]);
+Route::post("products",[ProductController::class,"store"])->middleware(["auth:sanctum","admin"]);
+Route::put("products/{product}",[ProductController::class,"update"])->middleware(["auth:sanctum","admin"]);
+Route::get("products/{product}",[ProductController::class,"detail"])->middleware(["auth:sanctum","admin"]);
+Route::delete("products/{product}",[ProductController::class,"delete"])->middleware(["auth:sanctum","admin"]);
+Route::delete("products",[ProductController::class,"deleteAll"])->middleware(["auth:sanctum","admin"]);
+Route::post("products/{product}/image-upload",[ProductController::class,"imageUpload"])->middleware(["auth:sanctum","admin"])->middleware(["auth:sanctum","admin"]);
+
 

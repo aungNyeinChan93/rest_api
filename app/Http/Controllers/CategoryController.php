@@ -17,7 +17,9 @@ class CategoryController extends Controller
             "name" => "required",
         ]);
 
-        $category = Category::create($validated);
+        $category = Category::create([
+            "name"=>$request->name,
+        ]);
 
         return response()->json([
             "message"=>"category create success",

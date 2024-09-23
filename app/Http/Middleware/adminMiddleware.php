@@ -15,6 +15,7 @@ class adminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
+        // dd($request->user->role);
         if( $request->user()->role->name == "admin" || $request->user()->role->name == "superadmin"){
             return $next($request);
         }else{

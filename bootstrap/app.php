@@ -18,8 +18,12 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         //
-        $middleware->alias(['admin' => adminMiddleware::class]);
-        $middleware->alias(['superadmin' => superadminMiddleware::class]);
+        $middleware->alias([
+            'admin' => adminMiddleware::class,
+            "superadmin"=>superadminMiddleware::class
+            ]
+        );
+
     })
     ->withExceptions(function (Exceptions $exceptions) {
         // 404
