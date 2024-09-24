@@ -133,14 +133,23 @@ class ProductController extends Controller
         $urls= [];
         if(gettype($uploadImages) == "array"){
             foreach($uploadImages as $image){
-                $fileName= $image->getClientOriginalName();
-                $urls[] = $fileName;
-                $uploadImages->move(public_path()."/api/productImage/",$fileName);
+                if(gettype($image)== "string"){
+                    $fileName= $image->getClientOriginalName();
+                    $urls[] = $fileName;
+                }else{
+                    $fileName= $image->getClientOriginalName();
+                    $uploadImages->move(public_path()."/api/productImage/",$fileName); //new
+                    $urls[] = $fileName;
+                }
             }
         }else{
             $fileName= $uploadImages->getClientOriginalName();
             $urls[] = $fileName;
             $uploadImages->move(public_path()."/api/productImage/",$fileName);
+        }
+
+        if(count($urls) >1){
+            $product->images()->delete();
         }
 
         foreach($urls as $url){
